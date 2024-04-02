@@ -1,0 +1,12 @@
+sudo apt-get install qemu  # Install QEMU if not already installed
+
+qemu-img create -f qcow2 freedos.img 2G  # Create a 2GB disk image
+
+qemu-system-i386 -hda freedos.img -cdrom freedos.iso -boot d  # Boot VM from FreeDOS ISO to install
+
+# Follow on-screen instructions to install FreeDOS
+
+# After installation, configure boot order to boot from hard disk
+# Remove -cdrom freedos.iso -boot d from the command below:
+
+qemu-system-i386 -hda freedos.img  # Start VM with FreeDOS installed

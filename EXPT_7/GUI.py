@@ -4,7 +4,7 @@ from tkinter import filedialog
 def create_file():
     # Open a new file dialog
     file_path = filedialog.asksaveasfilename(defaultextension=".txt", filetypes=[("Text files", ".txt"), ("All files", ".*")])
-    if file_path:
+    if file_path:   
         with open(file_path, 'w') as file:
             file.write("This is a new file.")
 
