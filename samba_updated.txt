@@ -1,0 +1,15 @@
+sudo apt-get update && sudo apt-get install samba -y
+sudo nano /etc/samba/smb.conf
+
+[shared]
+    comment = Shared Directory
+    path = /path/to/your/shared/directory
+    browseable = yes
+    guest ok = yes
+    read only = no
+    create mask = 0755
+
+sudo service smbd restart
+sudo smbpasswd -a username
+
+smbclient //IP_address_of_your_server/shared -U username
