@@ -1,0 +1,10 @@
+sudo ifconfig eth0 192.168.1.10 netmask 255.255.255.0 up
+sudo nano /etc/network/interfaces
+
+auto eth0
+iface eth0 inet static
+    address 192.168.1.10
+    netmask 255.255.255.0
+    gateway 192.168.1.1
+sudo service networking restart
+ifconfig eth0
