@@ -14,4 +14,4 @@ Sudo ufw allow samba
 
 Sudo smbpasswd -a username
 
-Smb://ip address/sambSmb://ip address/sambashareashare
+Smb://ip address/sambSmb://ip address/sambashare
