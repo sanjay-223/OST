@@ -1,0 +1,33 @@
+Install QEMU: If you haven't already installed QEMU, you can do so by using your package manager. For example, on Ubuntu, you can install it using:
+
+sudo apt-get install qemu
+
+Download FreeDOS: Download the FreeDOS ISO image from the official website or any trusted source.
+
+Create a Virtual Hard Disk: You can create a virtual hard disk for FreeDOS to install onto. You can use the qemu-img command to create a virtual hard disk image. For example:
+
+qemu-img create -f qcow2 freedos.img 10G
+
+This command creates a 10GB virtual hard disk image named freedos.img in qcow2 format.
+
+Start QEMU with FreeDOS ISO: You can start QEMU with the FreeDOS ISO image and the virtual hard disk image you created. Use the following command:
+
+qemu-system-i386 -m 512 -hda freedos.img -cdrom freedos.iso -boot d
+-m 512 sets the amount of RAM for the virtual machine to 512MB. You can adjust this value as per your requirements.
+-hda freedos.img specifies the virtual hard disk image.
+-cdrom freedos.iso specifies the FreeDOS ISO image.
+-boot d tells QEMU to boot from the CD-ROM (which is the FreeDOS ISO in this case).
+
+Install FreeDOS: Follow the on-screen instructions to install FreeDOS onto the virtual hard disk. You'll typically need to partition the disk, format it, and then proceed with the installation.
+
+Boot into FreeDOS: Once the installation is complete, you can boot into FreeDOS by starting QEMU with the virtual hard disk image. Use a command similar to the one in step 4, but omit the -cdrom option:
+
+qemu-system-i386 -m 512 -hda freedos.img
+
+This command starts QEMU with the virtual hard disk image. You should now be able to use FreeDOS within the QEMU virtual machine.
+
+
+
+
+
+

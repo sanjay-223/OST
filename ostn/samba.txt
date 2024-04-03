@@ -1,0 +1,17 @@
+
+sudo apt install samba
+Mkdir sambashare
+Sudo nano /etc/samba/smb.conf
+
+[sambashare] 
+Comment = samba on Kali
+Path = /home/user/sambashare
+Read only = no
+Browsable = yes
+
+Sudo service smbd restart
+Sudo ufw allow samba 
+
+Sudo smbpasswd -a username
+
+Smb://ip address/sambSmb://ip address/sambashare
